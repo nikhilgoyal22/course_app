@@ -28,6 +28,8 @@ RSpec.describe Coach, type: :model do
 
     coach1.destroy
     courses = Course.where(id: course_ids)
+
+    expect(Coach.count).to eq(1)
     expect(courses.length).to eq(2)
     expect(courses.first.coach_id).to eq(coach2.id)
   end
